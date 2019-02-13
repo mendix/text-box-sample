@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<widget id="mendix.textbox.TextBox" pluginWidget="true" needsEntityContext="true" offlineCapable="true" labeled="true" xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../xsd/widget.xsd">
+    <name>Text Box</name>
+    <description>Edit text input</description>
+    <icon/>
+    <properties>
+        <property key="textAttribute" type="attribute">
+            <caption>Text attribute</caption>
+            <category>Data source</category>
+            <description/>
+            <attributeTypes>
+                <attributeType name="String"/>
+            </attributeTypes>
+        </property>
+        <property key="editable" type="enumeration" defaultValue="default">
+            <caption>Editable</caption>
+            <category>Data source</category>
+            <description/>
+            <enumerationValues>
+                <enumerationValue key="default">Default</enumerationValue>
+                <enumerationValue key="never">Never</enumerationValue>
+            </enumerationValues>
+        </property>
+        <property key="requiredMessage" type="textTemplate" required="false">
+            <caption>Required message</caption>
+            <category>Validation</category>
+            <description/>
+            <translations>
+                <translation lang="en_US">A input text is required</translation>
+            </translations>
+        </property>
+        <property key="onChangeAction" type="action" required="false">
+            <caption>On change action</caption>
+            <category>Events</category>
+            <description/>
+        </property>
+    </properties>
+</widget>
