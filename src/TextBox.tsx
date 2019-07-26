@@ -8,10 +8,9 @@ import { Alert } from "./components/Alert";
 import "./ui/TextBox.css";
 
 class TextBox extends Component<TextBoxContainerProps> {
-
     private readonly onLeaveHandle = this.onLeave.bind(this);
 
-    componentDidMount() {
+    componentDidMount(): void {
         this.props.textAttribute.setValidator(this.validator.bind(this));
     }
 
@@ -19,20 +18,22 @@ class TextBox extends Component<TextBoxContainerProps> {
         const value = this.props.textAttribute.value || "";
         const validationFeedback = this.props.textAttribute.validation;
         const required = !!(this.props.requiredMessage && this.props.requiredMessage.value);
-        return <Fragment>
-            <TextInput
-                value={value}
-                style={this.props.style}
-                className={this.props.class}
-                tabIndex={this.props.tabIndex}
-                id={this.props.id}
-                disabled={this.isReadOnly()}
-                onLeave={this.onLeaveHandle}
-                required={required}
-                hasError={!!validationFeedback}
-            />
-            <Alert id={this.props.id + "-error"}>{validationFeedback}</Alert>
-        </Fragment>;
+        return (
+            <Fragment>
+                <TextInput
+                    id={this.props.id}
+                    value={value}
+                    style={this.props.style}
+                    className={this.props.class}
+                    tabIndex={this.props.tabIndex}
+                    disabled={this.isReadOnly()}
+                    onLeave={this.onLeaveHandle}
+                    required={required}
+                    hasError={!!validationFeedback}
+                />
+                <Alert id={this.props.id + "-error"}>{validationFeedback}</Alert>
+            </Fragment>
+        );
     }
 
     private validator(value: string | undefined): string | undefined {
@@ -41,7 +42,6 @@ class TextBox extends Component<TextBoxContainerProps> {
         if (requiredMessage && requiredMessage.value && !value) {
             return requiredMessage.value;
         }
-        return;
     }
 
     private isReadOnly(): boolean {
