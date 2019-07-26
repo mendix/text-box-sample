@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<widget id="mendix.textbox.TextBox" pluginWidget="true" needsEntityContext="true" offlineCapable="true" labeled="true" xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../xsd/widget.xsd">
+<widget id="mendix.textbox.TextBox" pluginWidget="true" needsEntityContext="true" offlineCapable="true" xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/@mendix/pluggable-widgets-api/widget.xsd">
     <name>Text Box</name>
     <description>Edit text input</description>
     <icon/>
     <properties>
-        <property key="textAttribute" type="attribute">
+        <propertyGroup caption="Label">
+            <systemProperty key="Label" />
+        </propertyGroup>
             <caption>Text attribute</caption>
             <category>Data source</category>
             <description/>
