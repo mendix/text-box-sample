@@ -48,16 +48,11 @@ class TextBox extends Component<TextBoxContainerProps> {
         return this.props.editable === "never" || this.props.textAttribute.readOnly;
     }
 
-    private onLeave(value: string, isChanged: boolean) {
+    private onLeave(value: string, isChanged: boolean): void {
         if (!isChanged) {
             return;
         }
-        const { textAttribute, onChangeAction } = this.props;
-        textAttribute.setValue(value);
-
-        if (onChangeAction && onChangeAction.canExecute) {
-            onChangeAction.execute();
-        }
+        this.props.textAttribute.setValue(value);
     }
 }
 

@@ -8,7 +8,7 @@
             <systemProperty key="Label" />
         </propertyGroup>
         <propertyGroup caption="Data source">
-            <property key="textAttribute" type="attribute">
+            <property key="textAttribute" type="attribute" onChange="onChangeAction">
                 <caption>Text attribute</caption>
                 <description/>
                 <attributeTypes>
