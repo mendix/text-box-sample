@@ -1,5 +1,6 @@
 import { FunctionComponent, createElement } from "react";
 import classNames from "classnames";
+
 export interface AlertProps {
     id?: string;
     alertStyle?: "default" | "primary" | "success" | "info" | "warning" | "danger";
