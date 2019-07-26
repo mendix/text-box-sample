@@ -2,8 +2,8 @@ import { Component, ReactNode, createElement } from "react";
 import { TextBoxWebModelerProps } from "../typings/TextBoxProps";
 import { TextInput } from "./components/TextInput";
 
-// tslint:disable-next-line class-name
-export class preview extends Component<TextBoxWebModelerProps> {
+declare function require(name: string): string;
+
     render(): ReactNode {
         const value = `[${this.props.textAttribute}]`;
         return <TextInput value={value} disabled={this.props.editable === "never"} />;
@@ -15,3 +15,6 @@ export function getVisibleProperties(_valueMap: TextBoxPreviewProps, visibilityM
     return visibilityMap;
 }
 
+export function getPreviewCss(): string {
+    return require("./ui/TextBox.css");
+}
