@@ -7,7 +7,8 @@ declare function require(name: string): string;
 export class preview extends Component<TextBoxPreviewProps> {
     render(): ReactNode {
         const value = `[${this.props.textAttribute}]`;
-        return <TextInput value={value} disabled={this.props.editable === "never"} />;
+        // systemProperty key="Editability" will be supported starting from Mendix 8.3
+        return <TextInput value={value} />;
     }
 }
 

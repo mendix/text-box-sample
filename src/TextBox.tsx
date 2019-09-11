@@ -26,7 +26,7 @@ class TextBox extends Component<TextBoxContainerProps> {
                     style={this.props.style}
                     className={this.props.class}
                     tabIndex={this.props.tabIndex}
-                    disabled={this.isReadOnly()}
+                    disabled={this.props.textAttribute.readOnly}
                     onLeave={this.onLeaveHandle}
                     required={required}
                     hasError={!!validationFeedback}
@@ -42,10 +42,6 @@ class TextBox extends Component<TextBoxContainerProps> {
         if (requiredMessage && requiredMessage.value && !value) {
             return requiredMessage.value;
         }
-    }
-
-    private isReadOnly(): boolean {
-        return this.props.editable === "never" || this.props.textAttribute.readOnly;
     }
 
     private onLeave(value: string, isChanged: boolean): void {

@@ -4,7 +4,7 @@
  * @author Mendix Widgets Team
  */
 import { CSSProperties } from "react";
-import { pages } from "mendixmodelsdk";
+import { ActionPreview } from "@mendix/pluggable-widgets-typing-generator/dist/typings";
 import { ActionValue, DynamicValue, EditableValue } from "mendix";
 
 interface CommonProps {
@@ -14,25 +14,20 @@ interface CommonProps {
     tabIndex: number;
 }
 
-export type EditableEnum = "default" | "never";
-
 export interface TextBoxContainerProps extends CommonProps {
     textAttribute: EditableValue<string>;
-    editable: EditableEnum;
     requiredMessage?: DynamicValue<string>;
     onChangeAction?: ActionValue;
 }
 
 export interface TextBoxPreviewProps extends CommonProps {
     textAttribute: string;
-    editable: EditableEnum;
     requiredMessage?: string;
-    onChangeAction?: pages.ClientAction;
+    onChangeAction?: ActionPreview;
 }
 
 export interface VisibilityMap {
     textAttribute: boolean;
-    editable: boolean;
     requiredMessage: boolean;
     onChangeAction: boolean;
 }
